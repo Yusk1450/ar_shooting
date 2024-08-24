@@ -5,7 +5,10 @@
   },
   "resources" : [
     {
-      "filename" : "knmc.arreferenceimage"
+      "filename" : "hachiware2.arreferenceimage"
+    },
+    {
+      "filename" : "momonge2.arreferenceimage"
     }
   ]
 }
