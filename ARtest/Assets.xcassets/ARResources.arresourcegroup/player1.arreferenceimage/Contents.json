@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "hachiware2.jpg",
+      "filename" : "player1.png",
       "idiom" : "universal"
     }
   ],
@@ -10,6 +10,6 @@
     "version" : 1
   },
   "properties" : {
-    "width" : 1.3333333333333333
+    "width" : 1
   }
 }

@@ -8,6 +8,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import Alamofire
 
 class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDelegate {
 
@@ -65,9 +66,9 @@ class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDel
         let imageName = imageAnchor.referenceImage.name
         var contents: String?
         
-        if imageName == "hachiware2" {
+        if imageName == "player1" {
                 contents = "hachiware"
-            } else if imageName == "momonge2" {
+            } else if imageName == "player2" {
                 contents = "momonga"
             }
 
@@ -107,9 +108,9 @@ class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDel
         if let hitNode = hitTestResults.first?.node {
             // ノードの名前を確認して、対応する処理を実行
             if let nodeName = hitNode.name {
-                if nodeName == "momonga2" {
+                if nodeName == "player1" {
                     print("tap1")
-                } else if nodeName == "hachiware2" {
+                } else if nodeName == "player2" {
                     print("tap2")
                 }
             }

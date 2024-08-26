@@ -5,10 +5,10 @@
   },
   "resources" : [
     {
-      "filename" : "hachiware2.arreferenceimage"
+      "filename" : "player1.arreferenceimage"
     },
     {
-      "filename" : "momonge2.arreferenceimage"
+      "filename" : "player2.arreferenceimage"
     }
   ]
 }

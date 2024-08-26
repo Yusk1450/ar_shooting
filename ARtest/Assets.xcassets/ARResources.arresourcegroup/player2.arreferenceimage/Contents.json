@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "momonga2.jpg",
+      "filename" : "player2.png",
       "idiom" : "universal"
     }
   ],
@@ -10,6 +10,6 @@
     "version" : 1
   },
   "properties" : {
-    "width" : 0.56269113149847094
+    "width" : 1
   }
 }
