@@ -64,31 +64,11 @@ class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDel
         
         //コンテンツ表示
         let imageName = imageAnchor.referenceImage.name
-        var contents: String?
-        
-        if imageName == "player1" {
-                contents = "hachiware"
-            } else if imageName == "player2" {
-                contents = "momonga"
-            }
 
-        // ファイルが見つかった場合のみ処理を続行
-        if let contents = contents {
-        let imageNode = SKSpriteNode(imageNamed: contents)
-        
-        //画像の上下
-        imageNode.yScale = -1.0
-
-        let imageScene = SKScene(size: CGSize(width: 1720, height: 1080))
-
-        // シーンの中心に画像を配置
-        imageNode.position = CGPoint(x: imageScene.size.width / 2, y: imageScene.size.height / 2)
-
-        imageScene.addChild(imageNode)
          
         // 検出された画像の物理サイズに合わせて平面を作成
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-            plane.firstMaterial?.diffuse.contents = imageScene
+            plane.firstMaterial?.diffuse.contents = UIImage(named: "barng_target")
     
                 
             let planeNode = SCNNode(geometry: plane)
@@ -97,7 +77,7 @@ class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDel
             // 画像に関連付けられたノードに名前を設定
             planeNode.name = imageName
             node.addChildNode(planeNode)
-        }
+
         
     }
     
