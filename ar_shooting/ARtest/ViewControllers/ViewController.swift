@@ -15,6 +15,7 @@ class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDel
     let HP = [-1,-1,-1,-1]
     
     @IBOutlet var sceneView: ARSCNView!
+    var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +93,11 @@ class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDel
                     print("tap1")
                 } else if nodeName == "player2" {
                     print("tap2")
+                }else if nodeName == "player3" {
+                    print("tap3")
+                }
+                else if nodeName == "player4" {
+                    print("tap4")
                 }
             }
         }
