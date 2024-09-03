@@ -19,6 +19,8 @@
 		CE5053AB2BF73F8A00AF6BFE /* ARtestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5053AA2BF73F8A00AF6BFE /* ARtestTests.swift */; };
 		CE5053B52BF73F8A00AF6BFE /* ARtestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5053B42BF73F8A00AF6BFE /* ARtestUITests.swift */; };
 		CE5053B72BF73F8A00AF6BFE /* ARtestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5053B62BF73F8A00AF6BFE /* ARtestUITestsLaunchTests.swift */; };
+		CEA073FF2C8595790086E129 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA073FE2C8595790086E129 /* FirstViewController.swift */; };
+		CEA074032C86BBD00086E129 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA074022C86BBD00086E129 /* AlertUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		CE5053B02BF73F8A00AF6BFE /* ARtestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARtestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5053B42BF73F8A00AF6BFE /* ARtestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARtestUITests.swift; sourceTree = "<group>"; };
 		CE5053B62BF73F8A00AF6BFE /* ARtestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARtestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEA073FE2C8595790086E129 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		CEA074022C86BBD00086E129 /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
 		DB6585A6FE701AEB0A1D1CB2 /* Pods-ARtest-ARtestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARtest-ARtestUITests.release.xcconfig"; path = "Target Support Files/Pods-ARtest-ARtestUITests/Pods-ARtest-ARtestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EEEFF61B70018F5F51281B98 /* Pods-ARtestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARtestTests.release.xcconfig"; path = "Target Support Files/Pods-ARtestTests/Pods-ARtestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,9 +143,10 @@
 		CE5053922BF73F8700AF6BFE /* ARtest */ = {
 			isa = PBXGroup;
 			children = (
+				CEA074012C86BBBE0086E129 /* Utils */,
 				CE5053932BF73F8700AF6BFE /* AppDelegate.swift */,
 				CE5053952BF73F8700AF6BFE /* SceneDelegate.swift */,
-				CE5053972BF73F8700AF6BFE /* ViewController.swift */,
+				CEA074002C8595800086E129 /* ViewControllers */,
 				CE5053992BF73F8700AF6BFE /* Main.storyboard */,
 				CE50539C2BF73F8A00AF6BFE /* Assets.xcassets */,
 				CE50539E2BF73F8A00AF6BFE /* LaunchScreen.storyboard */,
@@ -165,6 +170,23 @@
 				CE5053B62BF73F8A00AF6BFE /* ARtestUITestsLaunchTests.swift */,
 			);
 			path = ARtestUITests;
+			sourceTree = "<group>";
+		};
+		CEA074002C8595800086E129 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEA073FE2C8595790086E129 /* FirstViewController.swift */,
+				CE5053972BF73F8700AF6BFE /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CEA074012C86BBBE0086E129 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CEA074022C86BBD00086E129 /* AlertUtil.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +431,8 @@
 				CE5053982BF73F8700AF6BFE /* ViewController.swift in Sources */,
 				CE5053942BF73F8700AF6BFE /* AppDelegate.swift in Sources */,
 				CE5053962BF73F8700AF6BFE /* SceneDelegate.swift in Sources */,
+				CEA074032C86BBD00086E129 /* AlertUtil.swift in Sources */,
+				CEA073FF2C8595790086E129 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,11 +618,12 @@
 				DEVELOPMENT_TEAM = T9PZUA3TA2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ARtest/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "ARのため";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -624,11 +649,12 @@
 				DEVELOPMENT_TEAM = T9PZUA3TA2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ARtest/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "ARのため";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
