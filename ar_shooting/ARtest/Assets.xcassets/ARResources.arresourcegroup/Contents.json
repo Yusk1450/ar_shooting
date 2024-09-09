@@ -5,6 +5,9 @@
   },
   "resources" : [
     {
+      "filename" : "items.arreferenceimage"
+    },
+    {
       "filename" : "player1.arreferenceimage"
     },
     {

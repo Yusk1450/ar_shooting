@@ -7,15 +7,30 @@
 
 import Foundation
 import UIKit
+import Alamofire
+
 
 
 
 class FirstViewController : UIViewController
 {
     var playerNum = -1
+    var players = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let url = "https://yusk1450.sakura.ne.jp/barng/reset"
+
+                let parameters:[String: Any] = [
+                    "room_id": 1,
+                ]
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).response { response in
+            if let data = response.data
+            {
+                print(String(data: data, encoding: .utf8))
+            }
+        }
     }
     
     @IBAction func playerNumBtnAction(_ sender: Any)
@@ -32,6 +47,20 @@ class FirstViewController : UIViewController
         {
             btn.isSelected = true
             self.playerNum = btn.tag
+            if self.playerNum == 2
+            {
+                players = 2
+            }
+            else if self.playerNum == 3
+            {
+                players = 3
+            }
+            else if self.playerNum == 4
+            {
+                AlertUtil.showAlert(title: "ERROR", message: "4人は選択できません", viewController: self)
+                return
+                //players = 4
+            }
         }
     }
     
@@ -46,6 +75,13 @@ class FirstViewController : UIViewController
         }
         self.performSegue(withIdentifier: "togame", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "togame" {
+                let ViewController = segue.destination as! ViewController
+                ViewController.playerNum = self.players
+            }
+        }
     
     
 }

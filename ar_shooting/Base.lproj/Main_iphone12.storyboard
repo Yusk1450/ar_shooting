@@ -103,8 +103,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="item_no_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hpo-f4-rhJ">
-                                <rect key="frame" x="673" y="290" width="80" height="80"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEF-7X-JOn">
+                                <rect key="frame" x="672" y="289" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoL-8c-0Py">
+                                <rect key="frame" x="683" y="299" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="item_heel_icon_02" translatesAutoresizingMaskIntoConstraints="NO" id="Hpo-f4-rhJ">
+                                <rect key="frame" x="672" y="290" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="pause_pop" translatesAutoresizingMaskIntoConstraints="NO" id="nF7-Uu-J3G">
+                                <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -113,12 +126,89 @@
                     </view>
                     <navigationItem key="navigationItem" id="jrg-Qu-Led"/>
                     <connections>
+                        <outlet property="HPber" destination="eqH-9M-beG" id="mN8-de-YYv"/>
+                        <outlet property="Pause" destination="nF7-Uu-J3G" id="xdh-rQ-H8w"/>
+                        <outlet property="gameview" destination="veq-or-q1G" id="GRP-5l-rHZ"/>
+                        <outlet property="icon" destination="Hpo-f4-rhJ" id="Pet-uY-gbO"/>
+                        <outlet property="icon_Line" destination="hEF-7X-JOn" id="BEh-yh-gts"/>
+                        <outlet property="icon_back" destination="QoL-8c-0Py" id="rGt-6B-HVj"/>
                         <outlet property="sceneView" destination="Oh5-6w-lnt" id="SK4-RA-S1I"/>
+                        <segue destination="BBi-sr-IN6" kind="show" identifier="toresult" id="ILz-Ey-18z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="643.66197183098598" y="-231.29770992366412"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="eiq-dG-Ey0">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="BBi-sr-IN6" customClass="ResultViewController" customModule="ARtest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tfx-fS-Ap9">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="result_lose_1p" translatesAutoresizingMaskIntoConstraints="NO" id="gQe-4G-eKF">
+                                <rect key="frame" x="282" y="60" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="result_lose_2p" translatesAutoresizingMaskIntoConstraints="NO" id="NHR-U2-16s">
+                                <rect key="frame" x="282" y="110" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="result_lose_3p" translatesAutoresizingMaskIntoConstraints="NO" id="vjk-xU-gME">
+                                <rect key="frame" x="282" y="160" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="result_lose_4p" translatesAutoresizingMaskIntoConstraints="NO" id="dq2-v4-eMs">
+                                <rect key="frame" x="282" y="210" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="result_you_pick" translatesAutoresizingMaskIntoConstraints="NO" id="POH-ZR-6Nu" userLabel="result_pick_1p">
+                                <rect key="frame" x="282" y="60" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="result_you_pick" translatesAutoresizingMaskIntoConstraints="NO" id="QKp-KZ-0n5" userLabel="result_pick_2p">
+                                <rect key="frame" x="282" y="110" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="result_you_pick" translatesAutoresizingMaskIntoConstraints="NO" id="RGV-po-i2T" userLabel="result_pick_3p">
+                                <rect key="frame" x="282" y="160" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="result_you_pick" translatesAutoresizingMaskIntoConstraints="NO" id="jN7-rS-BPb" userLabel="result_pick_4p">
+                                <rect key="frame" x="282" y="210" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEf-EJ-MJB">
+                                <rect key="frame" x="282" y="290" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="" image="button_off_home"/>
+                                <state key="highlighted" image="button_on_home"/>
+                                <connections>
+                                    <action selector="backhome:" destination="BBi-sr-IN6" eventType="touchUpInside" id="ofc-6v-jiM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1uV-R2-tbK"/>
+                        <color key="backgroundColor" name="csblack"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="llM-tA-JiK"/>
+                    <connections>
+                        <outlet property="pick_1p" destination="POH-ZR-6Nu" id="MMM-SY-Fmm"/>
+                        <outlet property="pick_2p" destination="QKp-KZ-0n5" id="0VT-uO-r9a"/>
+                        <outlet property="pick_3p" destination="RGV-po-i2T" id="obd-LX-ixM"/>
+                        <outlet property="pick_4p" destination="jN7-rS-BPb" id="0OD-EL-nyA"/>
+                        <outlet property="result_1p" destination="gQe-4G-eKF" id="8dh-Ug-gZ3"/>
+                        <outlet property="result_2p" destination="NHR-U2-16s" id="0fZ-LG-Pne"/>
+                        <outlet property="result_3p" destination="vjk-xU-gME" id="DVj-AH-mH8"/>
+                        <outlet property="result_4p" destination="dq2-v4-eMs" id="z4c-Mx-GVb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6WU-s0-mde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1282" y="-200"/>
         </scene>
     </scenes>
     <resources>
@@ -130,9 +220,17 @@
         <image name="btn_on_3p" width="80" height="40"/>
         <image name="btn_on_4p" width="80" height="40"/>
         <image name="btn_on_start" width="280" height="40"/>
+        <image name="button_off_home" width="280" height="40"/>
+        <image name="button_on_home" width="280" height="40"/>
         <image name="game_back_1p" width="844" height="100"/>
-        <image name="item_no_icon" width="80" height="80"/>
+        <image name="item_heel_icon_02" width="80" height="80"/>
         <image name="logo" width="280" height="150"/>
+        <image name="pause_pop" width="844" height="390"/>
+        <image name="result_lose_1p" width="280" height="40"/>
+        <image name="result_lose_2p" width="280" height="40"/>
+        <image name="result_lose_3p" width="280" height="40"/>
+        <image name="result_lose_4p" width="280" height="40"/>
+        <image name="result_you_pick" width="280" height="40"/>
         <namedColor name="csblack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
