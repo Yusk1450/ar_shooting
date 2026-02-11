@@ -192,17 +192,14 @@ $app->post('/damage', function($req, $res, $args)
 	// ユーザ番号（1〜4）
 	$target_room_user_id = $params['target_user_id'];
 	// ダメージ
-	$damage = 10;
+	$damage = 2;
+
+	$sql = "SELECT item FROM users WHERE room_id = ? AND room_user_id = ? LIMIT 1";
 
 	// 自身のアイテムを確認する
-	$sql = 'SELECT item FROM users WHERE room_id = :room_id AND room_user_id = :room_user_id';
-	$stmt = $pdo->prepare($sql);
-	$stmt->execute([':room_id' => $room_id, ':room_user_id' => $my_room_user_id]);
-	$result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-	// アイテムを所持していた場合
-	$item = $result['item'];
-
+	$result = $pdo->prepare($sql);
+	$result->execute([$room_id, $my_room_user_id]);
+	$item = $result->fetchColumn();
 	// 攻撃力アップ
 	if ($item == 0)
 	{
@@ -210,37 +207,48 @@ $app->post('/damage', function($req, $res, $args)
 	}
 
 	// 相手のアイテムを確認する
-	$sql = 'SELECT item FROM users WHERE room_id = :room_id AND room_user_id = :room_user_id';
-	$stmt = $pdo->prepare($sql);
-	$stmt->execute([':room_id' => $room_id, ':room_user_id' => $target_room_user_id]);
-	$result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-	// アイテムを所持していた場合
-	$item = $result['item'];
-
-	// 防御力アップ
+	$result = $pdo->prepare($sql);
+	$result->execute([$room_id, $target_room_user_id]);
+	$item = $result->fetchColumn();
+	// 防御力アップなら
 	if ($item == 1)
 	{
 		$damage *= 0.8;
 	}
 
-	$pdo->beginTransaction();
-
-	$sql = 'UPDATE users SET life = GREATEST(life - :damage, 0) WHERE room_id = :room_id AND room_user_id = :room_user_id';
-	$stmt = $pdo->prepare($sql);
-	$stmt->execute([':room_id' => $room_id, ':room_user_id' => $target_room_user_id, ':damage' => $damage]);
+	$damage = (int)floor($damage);
 
 	try
 	{
-		$pdo->commit();
+		$pdo->beginTransaction();
 
-		$resBody = $res->getBody();
-		$resBody->write('OK');
+		$sql = 'UPDATE users SET life = GREATEST(life - :damage, 0) WHERE room_id = :room_id AND room_user_id = :room_user_id';
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute([':room_id' => $room_id, ':room_user_id' => $target_room_user_id, ':damage' => $damage]);
+
+		$pdo->commit();
 	}
 	catch(PDOException $e)
 	{
 		$pdo->rollBack();
 	}
+
+	$sql = 'SELECT * FROM users WHERE room_id = :room_id';
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute([':room_id' => $room_id]);
+
+	$result = [];
+	foreach ($stmt as $row)
+	{
+		$data = array();
+
+		$data['user_id'] = $row['room_user_id'];
+		$data['life'] = $row['life'];
+
+		$result []= $data;
+	}
+
+	$res->getBody()->write(json_encode($result));
 
 	return $res;
 });
