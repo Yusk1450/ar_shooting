@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wda-ba-EtU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wda-ba-EtU">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -126,12 +125,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Gzi-KP-8O8"/>
                     <connections>
-                        <outlet property="HPber" destination="0cv-HO-smV" id="ZY1-Ey-8HM"/>
-                        <outlet property="Pause" destination="QV5-KG-3IH" id="DpB-b1-lTm"/>
-                        <outlet property="gameview" destination="1Ym-IQ-3QM" id="z9S-wf-hkv"/>
+                        <outlet property="gameView" destination="1Ym-IQ-3QM" id="z9S-wf-hkv"/>
+                        <outlet property="hpBar" destination="0cv-HO-smV" id="ZY1-Ey-8HM"/>
                         <outlet property="icon" destination="4sy-Vl-8OW" id="qE1-31-NMU"/>
-                        <outlet property="icon_Line" destination="Ruf-KS-aQD" id="siV-vp-SXr"/>
-                        <outlet property="icon_back" destination="1l2-k2-5Ch" id="NMJ-4Z-jxg"/>
+                        <outlet property="iconBack" destination="1l2-k2-5Ch" id="NMJ-4Z-jxg"/>
+                        <outlet property="iconLine" destination="Ruf-KS-aQD" id="siV-vp-SXr"/>
+                        <outlet property="pause" destination="QV5-KG-3IH" id="DpB-b1-lTm"/>
                         <outlet property="sceneView" destination="FJw-CY-zsp" id="VsA-QA-j2N"/>
                         <segue destination="Z7e-OW-TdF" kind="show" identifier="toresult" id="aIz-85-JLk"/>
                     </connections>
@@ -196,14 +195,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xyc-8x-hUZ"/>
                     <connections>
-                        <outlet property="pick_1p" destination="g3d-si-gqM" id="ORY-9Y-teM"/>
-                        <outlet property="pick_2p" destination="o6h-tW-PLx" id="ToZ-L8-Rkm"/>
-                        <outlet property="pick_3p" destination="EQu-PJ-iY6" id="FwU-35-MgF"/>
-                        <outlet property="pick_4p" destination="bfd-eG-kSO" id="r7A-8j-rik"/>
-                        <outlet property="result_1p" destination="mh3-ca-t9E" id="xv0-6S-8bc"/>
-                        <outlet property="result_2p" destination="yK3-Zx-bAd" id="hfq-4c-vYR"/>
-                        <outlet property="result_3p" destination="IDo-0W-r4S" id="aN5-PU-omt"/>
-                        <outlet property="result_4p" destination="caK-yK-iYr" id="vz9-Xj-zJH"/>
+                        <outlet property="pick1p" destination="g3d-si-gqM" id="ORY-9Y-teM"/>
+                        <outlet property="pick2p" destination="o6h-tW-PLx" id="ToZ-L8-Rkm"/>
+                        <outlet property="pick3p" destination="EQu-PJ-iY6" id="FwU-35-MgF"/>
+                        <outlet property="pick4p" destination="bfd-eG-kSO" id="r7A-8j-rik"/>
+                        <outlet property="result1p" destination="mh3-ca-t9E" id="xv0-6S-8bc"/>
+                        <outlet property="result2p" destination="yK3-Zx-bAd" id="hfq-4c-vYR"/>
+                        <outlet property="result3p" destination="IDo-0W-r4S" id="aN5-PU-omt"/>
+                        <outlet property="result4p" destination="caK-yK-iYr" id="vz9-Xj-zJH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKp-da-t3S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

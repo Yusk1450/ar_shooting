@@ -57,9 +57,9 @@ class FirstViewController : UIViewController
             }
             else if self.playerNum == 4
             {
-                AlertUtil.showAlert(title: "ERROR", message: "4人は選択できません", viewController: self)
-                return
-                //players = 4
+//                AlertUtil.showAlert(title: "ERROR", message: "4人は選択できません", viewController: self)
+//                return
+                players = 4
             }
         }
     }
@@ -73,13 +73,14 @@ class FirstViewController : UIViewController
             
             return
         }
-        self.performSegue(withIdentifier: "togame", sender: self)
+        self.performSegue(withIdentifier: "toSelectMarker", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "togame" {
-                let ViewController = segue.destination as! ViewController
-                ViewController.playerNum = self.players
+            if segue.identifier == "toSelectMarker" {
+//                let ViewController = segue.destination as! ViewController
+//                ViewController.playerNum = self.players
+                ShareData.shared.playerNum = self.players
             }
         }
     
