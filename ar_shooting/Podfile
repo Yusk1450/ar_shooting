@@ -6,6 +6,7 @@ target 'ARtest' do
 	pod 'SwiftyJSON'
 	pod 'Alamofire', '4.8.0'
 	pod 'Cartography'
+	pod 'TapticEngine'
 
   use_frameworks!
 

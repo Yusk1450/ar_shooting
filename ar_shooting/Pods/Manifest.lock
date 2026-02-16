@@ -2,23 +2,27 @@ PODS:
   - Alamofire (4.8.0)
   - Cartography (4.0.0)
   - SwiftyJSON (5.0.1)
+  - TapticEngine (1.2.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.8.0)
   - Cartography
   - SwiftyJSON
+  - TapticEngine
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Cartography
     - SwiftyJSON
+    - TapticEngine
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  TapticEngine: ed6f5b4a2e9aa46d4e8fa69a72a7a0b6719bf8ac
 
-PODFILE CHECKSUM: 86d7bb21a06ea22038265836913930f96cdeac65
+PODFILE CHECKSUM: f623548ee02e2894f14d268f9f131ab16f3d4903
 
 COCOAPODS: 1.15.2
