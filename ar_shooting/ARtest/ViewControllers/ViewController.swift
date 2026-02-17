@@ -10,6 +10,7 @@ import SceneKit
 import ARKit
 import Alamofire
 import SwiftyJSON
+import TapticEngine
 
 enum ItemType: Int
 {
@@ -442,6 +443,7 @@ class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDel
     }
     func damage()
     {
+        TapticEngine.notification.feedback(.success)
         let url = "https://yusk1450.sakura.ne.jp/barng/damage"
 
                 let parameters:[String: Any] = [
