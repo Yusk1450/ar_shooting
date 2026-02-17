@@ -40,6 +40,9 @@ class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDel
     var hpDif = 0.0
     
     var targetId = 0
+
+    var coolDown = 1.0
+    var isCoolDown = false
     
     @IBOutlet weak var pause: UIImageView!
     @IBOutlet weak var hpBar: UIView!
@@ -443,6 +446,18 @@ class ViewController: UIViewController, ARSCNViewDelegate,UIGestureRecognizerDel
     }
     func damage()
     {
+        if isCoolDown
+        {
+            return
+        }
+
+        isCoolDown = true
+
+        DispatchQueue.main.asyncAfter( deadline: .now() + coolDown)
+        {
+            self.isCoolDown = false
+        }
+
         TapticEngine.notification.feedback(.success)
         let url = "https://yusk1450.sakura.ne.jp/barng/damage"
 
