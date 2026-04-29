@@ -55,7 +55,7 @@ $app->get('/create_room', function($req, $res, $args)
 		$pdo->commit();
 
 		$resBody = $res->getBody();
-		$resBody->write(json_encode(['room_id' => $room_id]));
+		$resBody->write(json_encode(['room_id' => $room_id, 'code' => $code]));
 	}
 	catch(PDOException $e)
 	{
@@ -72,11 +72,13 @@ $app->get('/create_user', function($req, $res, $args)
 {
 	$pdo = db();
 
+	$params = $req->getQueryParams();
+
 	$pdo->beginTransaction();
 
-	$sql = 'INSERT INTO users () VALUE()';
+	$sql = 'INSERT INTO users (room_id, room_user_id) VALUE(:room_id, :room_user_id)';
 	$stmt = $pdo->prepare($sql);
-	$stmt->execute();
+	$stmt->execute([':room_id' => $params['room_id'], ':room_user_id' => $params['user_id']]);
 
 	$user_id = $pdo->lastInsertId();
 
@@ -85,7 +87,8 @@ $app->get('/create_user', function($req, $res, $args)
 		$pdo->commit();
 
 		$resBody = $res->getBody();
-		$resBody->write(json_encode(['user_id' => $user_id]));
+		// $resBody->write(json_encode(['user_id' => $user_id]));
+		$resBody->write('OK');
 	}
 	catch(PDOException $e)
 	{
